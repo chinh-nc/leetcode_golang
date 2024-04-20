@@ -52,3 +52,29 @@ func TestJumpGameCannotJumpFromFist(t *testing.T) {
 		t.Fatalf("CanJump() = %v, want %v", got, want)
 	}
 }
+
+func TestCanJump2Success(t *testing.T) {
+	nums := []int{2, 3, 1, 1, 4}
+	want := 2
+
+	got := CanJump2(nums)
+	if got != want {
+		t.Fatalf("CanJump2() = %v, want %v", got, want)
+	}
+
+	nums = []int{2,3,0,1,4}
+	want = 2
+	got = CanJump2(nums)
+	if got != want {
+		t.Fatalf("CanJump2() = %v, want %v", got, want)
+	}
+}
+
+func TestCanJump2SuccessForAnItem(t *testing.T) {
+	nums := []int{1}
+	want := 0
+	got := CanJump2(nums)
+	if got != want {
+		t.Fatalf("CanJump2() = %v, want %v", got, want)
+	}
+}
